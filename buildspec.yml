@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Restore started on `date`
-      - dotnet restore Microservice.csproj
+   
   build:
     commands:
       - echo Build started on `date`
