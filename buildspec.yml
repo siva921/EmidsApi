@@ -1,3 +1,4 @@
+
 version: 0.2
 phases:
   pre_build:
@@ -8,4 +9,9 @@ phases:
     commands:
       - echo Build started on `date`
       - dotnet publish -c release -o ./build_output Microservice.csproj
+artifacts:
+  files:
+    - CodeBuild-Microservice/build_output/**/*
+    - scripts/**/*
+  
 
