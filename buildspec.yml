@@ -1,9 +1,11 @@
 version: 0.2
-
 phases:
+  pre_build:
+    commands:
+      - echo Restore started on `date`
+      - dotnet restore Microservice.csproj
   build:
     commands:
-      - dotnet publish -c Release
-artifacts:
-  files:
-    - bin/Release/netcoreapp2.2/publish/*
+      - echo Build started on `date`
+      - dotnet publish -c release -o ./build_output Microservice.csproj
+
