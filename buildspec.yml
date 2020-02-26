@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - dotnet publish -c Release
+artifacts:
+  files:
+    - bin/Release/netcoreapp2.2/publish/*
