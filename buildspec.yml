@@ -4,16 +4,11 @@ env:
     LOGIN: prod/sonar:sonartoken
     HOST: prod/sonar:HOST
     Organization: prod/sonar:Organization
-    Project: prod/sonar:Project
-phases:
-  install:
-    runtime-versions:
-      
+    Project: prod/sonar:Project    
   pre_build:
     commands:
       - apt-get update
       - apt-get install -y jq
- 
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
       - unzip ./sonar-scanner-cli-3.3.0.1492-linux.zip
       - export PATH=$PATH:/sonar-scanner-3.3.0.1492-linux/bin/
