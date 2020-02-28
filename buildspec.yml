@@ -15,6 +15,7 @@ env:
       - export SONAR_SCANNER_OPTS="-server"
   build:
     commands:
+      - dotnet publish -c release -o ./build_output SampleCore.csproj
       - sonar-scanner -Dsonar.login=$LOGIN -Dsonar.host.url=$HOST -Dsonar.projectKey=$Project -Dsonar.organization=$Organization   
       - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$Project >result.json
       - cat result.json
